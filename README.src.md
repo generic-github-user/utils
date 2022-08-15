@@ -5,12 +5,7 @@ flexibility.
 
 ## Contents
 
-- [utils](#utils)
-  * [Contents](#contents)
-  * [Usage](#usage)
-    + [mv](#mv)
-  * [Branches](#branches)
-  * [Statistics](#statistics)
+[[toc]]
 
 ## Usage
 
@@ -92,14 +87,4 @@ python mv.py -c './**/*.png' 'images/@'
 
 ## Statistics
 
-
-cloc|github.com/AlDanial/cloc v 1.82  T=0.02 s (175.9 files/s, 11035.9 lines/s)
---- | ---
-
-Language|files|blank|comment|code
-:-------|-------:|-------:|-------:|-------:
-Markdown|2|51|0|144
-Python|2|10|8|38
---------|--------|--------|--------|--------
-SUM:|4|61|8|182
-
+[[stats]]

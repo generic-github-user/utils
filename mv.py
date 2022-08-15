@@ -6,9 +6,13 @@ import json
 parser = argparse.ArgumentParser()
 parser.add_argument('source')
 parser.add_argument('destination')
+parser.add_argument('--create', '-c', action='store_true')
 
 args = parser.parse_args()
 print(f'Moving from {args.source} to {args.destination}')
+
+if args.create:
+    Path(args.destination).mkdir()
 
 source = list(Path('.').glob(args.source))
 #dest = list(Path('.').glob(args.destination))
@@ -28,7 +32,7 @@ for i, a in enumerate(source):
         .replace('#', str(i)))
     if b.is_dir(): b /= a.name
     #breakpoint()
-    print(f'Attempting move from {a} to {b}')
+    #print(f'Attempting move from {a} to {b}')
     if not b.exists():
         Path(a).rename(b)
         print(f'Moved {a} to {b}')
