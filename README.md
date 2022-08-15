@@ -25,7 +25,7 @@ By default, `mv.py` includes some useful replacements that will be expanded
 
 - `#`: an integer representing how many files and directories were moved before the current one
 - `@`: the parent directory of the source/origin file or directory (useful for recursively handling nested directory structures, or when operating on a long file path)
-- `#`: the file extension/suffix, including the `.`
+- `%`: the file extension/suffix, including the `.`
 
 Some examples:
 
@@ -93,13 +93,13 @@ python mv.py -c './**/*.png' 'images/@'
 ## Statistics
 
 
-cloc|github.com/AlDanial/cloc v 1.82  T=0.02 s (174.4 files/s, 7848.3 lines/s)
+cloc|github.com/AlDanial/cloc v 1.82  T=0.02 s (175.9 files/s, 11035.9 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-Markdown|2|34|0|90
+Markdown|2|51|0|144
 Python|2|10|8|38
 --------|--------|--------|--------|--------
-SUM:|4|44|8|128
+SUM:|4|61|8|182
 

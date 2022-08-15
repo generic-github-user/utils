@@ -20,7 +20,7 @@ By default, `mv.py` includes some useful replacements that will be expanded
 
 - `#`: an integer representing how many files and directories were moved before the current one
 - `@`: the parent directory of the source/origin file or directory (useful for recursively handling nested directory structures, or when operating on a long file path)
-- `#`: the file extension/suffix, including the `.`
+- `%`: the file extension/suffix, including the `.`
 
 Some examples:
 
