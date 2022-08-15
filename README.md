@@ -49,3 +49,28 @@ python mv.py -c image.png test-dir
 ```
 python mv.py -c '*.png' images
 ```
+
+*move files matching a pattern and rename by index*
+```
+python mv.py -c '*.png' 'images/image-#.png'
+```
+
+*move files with multiple extensions*
+```
+python mv.py -c './source/*.*' 'images/image-#%'
+```
+
+*move files and print details to stdout*
+```
+python mv.py -c -v '*.png' 'images/image-#.png'
+```
+
+*move files recursively*
+```
+python mv.py -c './**/*.png' 'images/image-#.png'
+```
+
+*move files recursively, preserving directory structure*
+```
+python mv.py -c './**/*.png' 'images/@'
+```
