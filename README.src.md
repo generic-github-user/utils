@@ -5,10 +5,7 @@ flexibility.
 
 ## Contents
 
-- [utils](#utils)
-  * [Contents](#contents)
-  * [Branches](#branches)
-  * [Statistics](#statistics)
+[[toc]]
 
 ## Branches
 
@@ -18,14 +15,4 @@ flexibility.
 
 ## Statistics
 
-
-cloc|github.com/AlDanial/cloc v 1.82  T=0.02 s (134.8 files/s, 3235.5 lines/s)
---- | ---
-
-Language|files|blank|comment|code
-:-------|-------:|-------:|-------:|-------:
-Python|1|4|5|29
-Markdown|2|12|0|22
---------|--------|--------|--------|--------
-SUM:|3|16|5|51
-
+[[stats]]
