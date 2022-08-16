@@ -21,13 +21,9 @@ if args.create:
 
 # Find files matching glob
 source = list(Path('.').glob(args.source))
-#dest = list(Path('.').glob(args.destination))
 dest = Path(args.destination).expanduser()
 print(f'Found {len(source)} files')
 
-i = 0
-#for i, (a, b) in enumerate(zip(source, dest)):
-#for a, b in itertools.zip_longest(source, dest):
 session = []
 # Loop over files
 for i, a in enumerate(source):
@@ -39,7 +35,6 @@ for i, a in enumerate(source):
         .replace('#', str(i)))
     # Handle implicit move to directory
     if b.is_dir(): b /= a.name
-    #breakpoint()
     #print(f'Attempting move from {a} to {b}')
     # Execute file move
     if not b.exists():
@@ -47,7 +42,6 @@ for i, a in enumerate(source):
         if args.verbose: print(f'Moved {a} to {b}')
         # Record move operation in log
         session.append(json.dumps({'source': str(a), 'destination': str(b)}))
-    #i += 1
 if args.verbose: print('Updating log file')
 with open(Path('~/Desktop/utils/mv_log.json').expanduser(), 'a') as f:
     f.write('\n'.join(session))
