@@ -3,6 +3,7 @@ from pathlib import Path
 import itertools
 import json
 import time
+import shutil
 
 # Create argument parser
 parser = argparse.ArgumentParser()
@@ -10,6 +11,7 @@ parser.add_argument('source')
 parser.add_argument('destination')
 parser.add_argument('--create', '-c', action='store_true')
 parser.add_argument('--verbose', '-v', action='store_true')
+parser.add_argument('--duplicate', '-d', action='store_true')
 
 # Parse command line arguments
 args = parser.parse_args()
@@ -38,7 +40,9 @@ for i, a in enumerate(source):
     #print(f'Attempting move from {a} to {b}')
     # Execute file move
     if not b.exists():
-        Path(a).rename(b)
+        if args.duplicate: shutil.copy(a, b)
+        else: Path(a).rename(b)
+
         if args.verbose: print(f'Moved {a} to {b}')
         # Record move operation in log
         session.append(json.dumps({'source': str(a), 'destination': str(b)}))
