@@ -86,20 +86,24 @@ python mv.py -c './**/*.png' 'images/@'
 
 ## Branches
 
-- main: main branch into which others are merged once stable
-- dev: development branch where new features can be implemented and tested before being merged into the stable `main` branch
-- mv: script for easily moving files and directories in bulk
+- `dev`: development branch where new features can be implemented and tested before being merged into the stable `main` branch
+- `docs`: various documentation (mostly aimed at the end user)
+- `main`: main branch into which others are merged once stable
+- `meta`: information about this repository (branches, code, etc.)
+- `mv-docs`: documentation for `mv.py`
+- `mv-undo`: implementing undo functionality in `mv.py` (see issue #2)
+- `mv`: script for easily moving files and directories in bulk
 
 ## Statistics
 
 
-cloc|github.com/AlDanial/cloc v 1.82  T=0.02 s (175.9 files/s, 11035.9 lines/s)
+cloc|github.com/AlDanial/cloc v 1.82  T=0.02 s (191.5 files/s, 12929.1 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-Markdown|2|51|0|144
+Markdown|2|51|0|163
 Python|2|10|8|38
 --------|--------|--------|--------|--------
-SUM:|4|61|8|182
+SUM:|4|61|8|201
 
