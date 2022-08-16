@@ -4,12 +4,14 @@ import itertools
 import json
 import time
 
+# Create argument parser
 parser = argparse.ArgumentParser()
 parser.add_argument('source')
 parser.add_argument('destination')
 parser.add_argument('--create', '-c', action='store_true')
 parser.add_argument('--verbose', '-v', action='store_true')
 
+# Parse command line arguments
 args = parser.parse_args()
 print(f'Moving from {args.source} to {args.destination}')
 
@@ -17,6 +19,7 @@ start = time.time()
 if args.create:
     Path(args.destination).mkdir()
 
+# Find files matching glob
 source = list(Path('.').glob(args.source))
 #dest = list(Path('.').glob(args.destination))
 dest = Path(args.destination).expanduser()
@@ -26,18 +29,23 @@ i = 0
 #for i, (a, b) in enumerate(zip(source, dest)):
 #for a, b in itertools.zip_longest(source, dest):
 session = []
+# Loop over files
 for i, a in enumerate(source):
     b = Path(str(dest))
+    # Make path substitutions
     b = Path(str(b)
         .replace('@', str(a.parent))
         .replace('%', a.suffix)
         .replace('#', str(i)))
+    # Handle implicit move to directory
     if b.is_dir(): b /= a.name
     #breakpoint()
     #print(f'Attempting move from {a} to {b}')
+    # Execute file move
     if not b.exists():
         Path(a).rename(b)
         if args.verbose: print(f'Moved {a} to {b}')
+        # Record move operation in log
         session.append(json.dumps({'source': str(a), 'destination': str(b)}))
     #i += 1
 if args.verbose: print('Updating log file')
