@@ -15,17 +15,21 @@ flexibility.
 - main: main branch into which others are merged once stable
 - dev: development branch where new features can be implemented and tested before being merged into the stable `main` branch
 - mv: script for easily moving files and directories in bulk
+- mv-docs: documentation for `mv.py`
+- mv-undo: implementing undo functionality in `mv.py` (see issue #2)
+- docs: various documentation (mostly aimed at the end user)
+- meta: information about this repository (branches, code, etc.)
 
 ## Statistics
 
 
-cloc|github.com/AlDanial/cloc v 1.82  T=0.02 s (134.8 files/s, 3235.5 lines/s)
+cloc|github.com/AlDanial/cloc v 1.82  T=0.02 s (178.1 files/s, 4675.2 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-Python|1|4|5|29
-Markdown|2|12|0|22
+Python|2|9|7|36
+Markdown|2|17|0|36
 --------|--------|--------|--------|--------
-SUM:|3|16|5|51
+SUM:|4|26|7|72
 
