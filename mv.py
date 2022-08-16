@@ -7,11 +7,11 @@ import shutil
 
 # Create argument parser
 parser = argparse.ArgumentParser()
-parser.add_argument('source')
-parser.add_argument('destination')
-parser.add_argument('--create', '-c', action='store_true')
-parser.add_argument('--verbose', '-v', action='store_true')
-parser.add_argument('--duplicate', '-d', action='store_true')
+parser.add_argument('source', help='Origin (where to move from); globs/wildcards are allowed')
+parser.add_argument('destination', help='Target (where to move to)')
+parser.add_argument('--create', '-c', action='store_true', help='Create the target directory if it does not already exist')
+parser.add_argument('--verbose', '-v', action='store_true', help='Print additional information about what the script is doing to your terminal (useful for debugging)')
+parser.add_argument('--duplicate', '-d', action='store_true', help='Copy/duplicate files and directories instead of moving them')
 
 # Parse command line arguments
 args = parser.parse_args()
